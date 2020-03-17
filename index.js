@@ -13,7 +13,8 @@ async function main() {
       contato: '14/03/2020',
       servico: 'Audiência'
     });
-  console.log(sheet.rowCount);
+  const lastRows = await gsheet.getRows(sheet);
+  lastRows.forEach((row) => console.log(row.contratante, row.contato))
 }
 
 main();
